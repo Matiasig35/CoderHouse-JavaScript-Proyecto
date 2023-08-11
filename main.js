@@ -1,9 +1,11 @@
 // Lista de productos con precios en un arreglo
 const producto = [
-    { nombre: 'Producto 1', precio: 10000 },
-    { nombre: 'Producto 2', precio: 15000 },
-    { nombre: 'Producto 3', precio: 12000 },
-    { nombre: 'Producto 4', precio: 7000 },
+    { nombre: 'Mate Justo Plateado', precio: 24200 },
+    { nombre: 'Mate Justo Blanco Texturado', precio: 24200 },
+    { nombre: 'Mate Justo Negro Texturado', precio: 24200 },
+    { nombre: 'Mate Justo Rojo Texturado', precio: 24200 },
+    { nombre: 'Bolso Justo', precio: 26500 },
+    { nombre: 'Yerba Ana Carolina', precio: 2100 },
 ];
   
   // Función para mostrar las opciones disponibles al cliente
@@ -11,7 +13,7 @@ const producto = [
   function mostrarOpciones() {
     console.log('Opciones disponibles:');
     for (let i = 0; i < producto.length; i++) {
-      console.log(`${i + 1}. ${producto[i].nombre} - $${producto[i].precio}`);
+      console.log(`${i + 1}. ${producto[i].nombre} - $ ${producto[i].precio}`);
     }
     console.log('0. Salir');
   }
@@ -33,14 +35,15 @@ const producto = [
       if (opcion >= 1 && opcion <= producto.length) {
         // Como el arreglo empieza numerando en 0, le tengo que restar 1 a la variable "opcion"
         const productoSeleccionado = producto[opcion - 1];
-        console.log(`Has seleccionado: ${productoSeleccionado.nombre} - $${productoSeleccionado.precio}`);
+        console.log(`Has seleccionado: ${productoSeleccionado.nombre} - $ ${productoSeleccionado.precio}`);
         totalVenta += productoSeleccionado.precio;
+        console.log(`El subtotal por los productos seleccionados es: $ ${totalVenta}`)
       } else {
         console.log('Opción inválida. Inténtelo de nuevo.');
       }
     }
   
-    console.log(`Gracias por su compra. Total: $${totalVenta}`);
+    console.log(`Gracias por su compra. Total final: $ ${totalVenta}`);
   }
   
   // Llamo a la función para iniciar la venta de productos
